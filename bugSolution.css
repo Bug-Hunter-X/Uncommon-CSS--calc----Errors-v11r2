@@ -1,0 +1,26 @@
+/* Correct use of calc() */
+.element {
+  width: calc(100% - 5px);
+  height: calc(200px + 10%); /*Converting percentage to px depends on context. This example is illustrative*/
+  margin: calc((100vw - 500px) / 2);
+}
+
+/*Illustrative example of unit conversion, 1em is approximately 16px*/
+.element2 {
+  width: calc(100px + 5em); /* This is better written as 100px + 80px or similar, using a consistent unit */
+  width: calc(100px + (5 * 16px)); /*Explicit conversion for clarity*/
+}
+
+/*Correct operator precedence*/
+.element3{
+  width: calc((100% - 5px) / 2);
+}
+
+/*This will fail if not corrected.  Extra spaces are acceptable, and in fact recommended for readability*/
+.element4 {
+  width: calc(100% - 5px);
+}
+/*And this will fail as well */
+.element5 {
+  width:calc(100%-5px);
+}
